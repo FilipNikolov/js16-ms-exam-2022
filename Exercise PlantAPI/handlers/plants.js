@@ -24,7 +24,7 @@ const getOne = async(req, res) => {
 const create = async(req, res) => {
     try {
         await validator.validate(req.body, validator.Plant);
-        let bs = await plants.addPlant(req.body);
+        let ps = await plants.addPlant(req.body);
         return res.status(204).send(ps);
     } catch (err) {
         console.log(err);
@@ -39,7 +39,16 @@ const update = async(req, res) => {
         return res.status(204).send("Ok");
     } catch (err) {
         console.log(err);
-        return res.status(500).send(`Internal server error ${err}!`)
+        return res.status(500).send(`Internal server error !`)
+    }
+};
+const remove = async(req, res) => {
+    try {
+        await plants.removePlant(req.params.id);
+        return res.status(204).send("Deleted!")
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send(`Internal server error!`)
     }
 };
 
@@ -48,5 +57,6 @@ module.exports = {
     getOne,
     create,
     update,
+    remove
   
 };
