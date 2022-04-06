@@ -2,17 +2,16 @@ const config = require('./pkg/config');
 require('./pkg/db');
 
 const express = require('express');
-const jwt = require('express-jwt');
-const auth = require('./handlers/plants');
+// const jwt = require('express-jwt');
+// const auth = require('./handlers/plants');
 
 const api = express();
 
-// api.get('/api/v1/plant', plant.getPlant);
+// api.get('/api/v1/plant', plant.getAllPlants);
 // api.post('/api/v1/plant', plant.addPlant);
-// api.get('/api/v1/plant/:id', plant.getPlantById);
+// api.get('/api/v1/plant/:id', plant.getOnePlant);
 // api.put('/api/v1/plant/:id', plant.updatePlant);
-// api.patch('/api/v1/plant/:id', plant.updatePartial);
-// api.delete('/api/v1/plant/:id', plant.deletePlant);
+// api.delete('/api/v1/plant/:id', plant.removePlant);
 
 
 
